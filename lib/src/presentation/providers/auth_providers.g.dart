@@ -17,9 +17,8 @@ String _$authBaseUrlHash() => r'2fb02dbd84da7965ccb6334a16a4072e9d1f2402';
 final authBaseUrlProvider = Provider<String>.internal(
   authBaseUrl,
   name: r'authBaseUrlProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$authBaseUrlHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$authBaseUrlHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -36,9 +35,8 @@ String _$authDeviceOsHash() => r'b7fa86c6b52e54000231b1aa0f851a106a4b5f75';
 final authDeviceOsProvider = Provider<String>.internal(
   authDeviceOs,
   name: r'authDeviceOsProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$authDeviceOsHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$authDeviceOsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -58,9 +56,8 @@ String _$tokenStoreHash() => r'd7cbea745a0b59dd6c94127a267f348fa8bf5c26';
 final tokenStoreProvider = Provider<TokenStore>.internal(
   tokenStore,
   name: r'tokenStoreProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$tokenStoreHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$tokenStoreHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -115,9 +112,8 @@ String _$loginUseCaseHash() => r'e082833fd1fc26be8c5fac08d612713cb2c18a17';
 final loginUseCaseProvider = AutoDisposeProvider<LoginUseCase>.internal(
   loginUseCase,
   name: r'loginUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$loginUseCaseHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$loginUseCaseHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -172,9 +168,8 @@ String _$meUseCaseHash() => r'43e0daa532516bc97645657cd4ac81ec8736eebe';
 final meUseCaseProvider = AutoDisposeProvider<MeUseCase>.internal(
   meUseCase,
   name: r'meUseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$meUseCaseHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$meUseCaseHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -209,14 +204,14 @@ String _$activateV2UseCaseHash() => r'3adf38794ccecf026652d771b3e6d647f4e9d251';
 @ProviderFor(activateV2UseCase)
 final activateV2UseCaseProvider =
     AutoDisposeProvider<ActivateV2UseCase>.internal(
-      activateV2UseCase,
-      name: r'activateV2UseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$activateV2UseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  activateV2UseCase,
+  name: r'activateV2UseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$activateV2UseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
@@ -268,9 +263,8 @@ String _$meV2UseCaseHash() => r'df8e278446bd6cd63ad92d634b961539aca2bd2e';
 final meV2UseCaseProvider = AutoDisposeProvider<MeV2UseCase>.internal(
   meV2UseCase,
   name: r'meV2UseCaseProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$meV2UseCaseHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$meV2UseCaseHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -287,19 +281,19 @@ String _$updateProfileV2UseCaseHash() =>
 @ProviderFor(updateProfileV2UseCase)
 final updateProfileV2UseCaseProvider =
     AutoDisposeProvider<UpdateProfileV2UseCase>.internal(
-      updateProfileV2UseCase,
-      name: r'updateProfileV2UseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$updateProfileV2UseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  updateProfileV2UseCase,
+  name: r'updateProfileV2UseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$updateProfileV2UseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef UpdateProfileV2UseCaseRef =
-    AutoDisposeProviderRef<UpdateProfileV2UseCase>;
+typedef UpdateProfileV2UseCaseRef
+    = AutoDisposeProviderRef<UpdateProfileV2UseCase>;
 String _$changePasswordV2UseCaseHash() =>
     r'428447fd0821142c9b1cf2f07da3d45d01a62f9e';
 
@@ -309,19 +303,19 @@ String _$changePasswordV2UseCaseHash() =>
 @ProviderFor(changePasswordV2UseCase)
 final changePasswordV2UseCaseProvider =
     AutoDisposeProvider<ChangePasswordV2UseCase>.internal(
-      changePasswordV2UseCase,
-      name: r'changePasswordV2UseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$changePasswordV2UseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  changePasswordV2UseCase,
+  name: r'changePasswordV2UseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$changePasswordV2UseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef ChangePasswordV2UseCaseRef =
-    AutoDisposeProviderRef<ChangePasswordV2UseCase>;
+typedef ChangePasswordV2UseCaseRef
+    = AutoDisposeProviderRef<ChangePasswordV2UseCase>;
 String _$requestProfileImageUploadUrlV2UseCaseHash() =>
     r'941a951eabcde67806d5ecb7e22ca6d1278b20f1';
 
@@ -331,19 +325,19 @@ String _$requestProfileImageUploadUrlV2UseCaseHash() =>
 @ProviderFor(requestProfileImageUploadUrlV2UseCase)
 final requestProfileImageUploadUrlV2UseCaseProvider =
     AutoDisposeProvider<RequestProfileImageUploadUrlV2UseCase>.internal(
-      requestProfileImageUploadUrlV2UseCase,
-      name: r'requestProfileImageUploadUrlV2UseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$requestProfileImageUploadUrlV2UseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  requestProfileImageUploadUrlV2UseCase,
+  name: r'requestProfileImageUploadUrlV2UseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$requestProfileImageUploadUrlV2UseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef RequestProfileImageUploadUrlV2UseCaseRef =
-    AutoDisposeProviderRef<RequestProfileImageUploadUrlV2UseCase>;
+typedef RequestProfileImageUploadUrlV2UseCaseRef
+    = AutoDisposeProviderRef<RequestProfileImageUploadUrlV2UseCase>;
 String _$lookupUserByPublicCodeV2UseCaseHash() =>
     r'8a07b89b5a0138a6dcd0eb9819b79efc9a164486';
 
@@ -353,19 +347,19 @@ String _$lookupUserByPublicCodeV2UseCaseHash() =>
 @ProviderFor(lookupUserByPublicCodeV2UseCase)
 final lookupUserByPublicCodeV2UseCaseProvider =
     AutoDisposeProvider<LookupUserByPublicCodeV2UseCase>.internal(
-      lookupUserByPublicCodeV2UseCase,
-      name: r'lookupUserByPublicCodeV2UseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$lookupUserByPublicCodeV2UseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  lookupUserByPublicCodeV2UseCase,
+  name: r'lookupUserByPublicCodeV2UseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$lookupUserByPublicCodeV2UseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef LookupUserByPublicCodeV2UseCaseRef =
-    AutoDisposeProviderRef<LookupUserByPublicCodeV2UseCase>;
+typedef LookupUserByPublicCodeV2UseCaseRef
+    = AutoDisposeProviderRef<LookupUserByPublicCodeV2UseCase>;
 String _$pingV2UseCaseHash() => r'b9edcc2856967e5013721ee755890042847192a2';
 
 /// v2 ping 유스케이스 provider.
@@ -394,14 +388,14 @@ String _$pingErrorV2UseCaseHash() =>
 @ProviderFor(pingErrorV2UseCase)
 final pingErrorV2UseCaseProvider =
     AutoDisposeProvider<PingErrorV2UseCase>.internal(
-      pingErrorV2UseCase,
-      name: r'pingErrorV2UseCaseProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$pingErrorV2UseCaseHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+  pingErrorV2UseCase,
+  name: r'pingErrorV2UseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$pingErrorV2UseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element

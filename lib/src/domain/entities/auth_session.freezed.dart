@@ -14,306 +14,391 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AuthSession {
+  AuthUser get user;
+  AuthTokens get tokens;
+  bool get forcePasswordChange;
 
- AuthUser get user; AuthTokens get tokens; bool get forcePasswordChange;
-/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AuthSessionCopyWith<AuthSession> get copyWith => _$AuthSessionCopyWithImpl<AuthSession>(this as AuthSession, _$identity);
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AuthSessionCopyWith<AuthSession> get copyWith =>
+      _$AuthSessionCopyWithImpl<AuthSession>(this as AuthSession, _$identity);
 
   /// Serializes this AuthSession to a JSON map.
   Map<String, dynamic> toJson();
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AuthSession &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.tokens, tokens) || other.tokens == tokens) &&
+            (identical(other.forcePasswordChange, forcePasswordChange) ||
+                other.forcePasswordChange == forcePasswordChange));
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthSession&&(identical(other.user, user) || other.user == user)&&(identical(other.tokens, tokens) || other.tokens == tokens)&&(identical(other.forcePasswordChange, forcePasswordChange) || other.forcePasswordChange == forcePasswordChange));
-}
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, user, tokens, forcePasswordChange);
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,user,tokens,forcePasswordChange);
-
-@override
-String toString() {
-  return 'AuthSession(user: $user, tokens: $tokens, forcePasswordChange: $forcePasswordChange)';
-}
-
-
+  @override
+  String toString() {
+    return 'AuthSession(user: $user, tokens: $tokens, forcePasswordChange: $forcePasswordChange)';
+  }
 }
 
 /// @nodoc
-abstract mixin class $AuthSessionCopyWith<$Res>  {
-  factory $AuthSessionCopyWith(AuthSession value, $Res Function(AuthSession) _then) = _$AuthSessionCopyWithImpl;
-@useResult
-$Res call({
- AuthUser user, AuthTokens tokens, bool forcePasswordChange
-});
+abstract mixin class $AuthSessionCopyWith<$Res> {
+  factory $AuthSessionCopyWith(
+          AuthSession value, $Res Function(AuthSession) _then) =
+      _$AuthSessionCopyWithImpl;
+  @useResult
+  $Res call({AuthUser user, AuthTokens tokens, bool forcePasswordChange});
 
-
-$AuthUserCopyWith<$Res> get user;$AuthTokensCopyWith<$Res> get tokens;
-
+  $AuthUserCopyWith<$Res> get user;
+  $AuthTokensCopyWith<$Res> get tokens;
 }
+
 /// @nodoc
-class _$AuthSessionCopyWithImpl<$Res>
-    implements $AuthSessionCopyWith<$Res> {
+class _$AuthSessionCopyWithImpl<$Res> implements $AuthSessionCopyWith<$Res> {
   _$AuthSessionCopyWithImpl(this._self, this._then);
 
   final AuthSession _self;
   final $Res Function(AuthSession) _then;
 
-/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? user = null,Object? tokens = null,Object? forcePasswordChange = null,}) {
-  return _then(_self.copyWith(
-user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as AuthUser,tokens: null == tokens ? _self.tokens : tokens // ignore: cast_nullable_to_non_nullable
-as AuthTokens,forcePasswordChange: null == forcePasswordChange ? _self.forcePasswordChange : forcePasswordChange // ignore: cast_nullable_to_non_nullable
-as bool,
-  ));
-}
-/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AuthUserCopyWith<$Res> get user {
-  
-  return $AuthUserCopyWith<$Res>(_self.user, (value) {
-    return _then(_self.copyWith(user: value));
-  });
-}/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AuthTokensCopyWith<$Res> get tokens {
-  
-  return $AuthTokensCopyWith<$Res>(_self.tokens, (value) {
-    return _then(_self.copyWith(tokens: value));
-  });
-}
-}
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? tokens = null,
+    Object? forcePasswordChange = null,
+  }) {
+    return _then(_self.copyWith(
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AuthUser,
+      tokens: null == tokens
+          ? _self.tokens
+          : tokens // ignore: cast_nullable_to_non_nullable
+              as AuthTokens,
+      forcePasswordChange: null == forcePasswordChange
+          ? _self.forcePasswordChange
+          : forcePasswordChange // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthUserCopyWith<$Res> get user {
+    return $AuthUserCopyWith<$Res>(_self.user, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthTokensCopyWith<$Res> get tokens {
+    return $AuthTokensCopyWith<$Res>(_self.tokens, (value) {
+      return _then(_self.copyWith(tokens: value));
+    });
+  }
+}
 
 /// Adds pattern-matching-related methods to [AuthSession].
 extension AuthSessionPatterns on AuthSession {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AuthSession value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _AuthSession() when $default != null:
-return $default(_that);case _:
-  return orElse();
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AuthSession value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AuthSession() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
 
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AuthSession value)  $default,){
-final _that = this;
-switch (_that) {
-case _AuthSession():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AuthSession value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AuthSession():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
 
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AuthSession value)?  $default,){
-final _that = this;
-switch (_that) {
-case _AuthSession() when $default != null:
-return $default(_that);case _:
-  return null;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AuthSession value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AuthSession() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
 
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AuthUser user,  AuthTokens tokens,  bool forcePasswordChange)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _AuthSession() when $default != null:
-return $default(_that.user,_that.tokens,_that.forcePasswordChange);case _:
-  return orElse();
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            AuthUser user, AuthTokens tokens, bool forcePasswordChange)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AuthSession() when $default != null:
+        return $default(_that.user, _that.tokens, _that.forcePasswordChange);
+      case _:
+        return orElse();
+    }
+  }
 
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AuthUser user,  AuthTokens tokens,  bool forcePasswordChange)  $default,) {final _that = this;
-switch (_that) {
-case _AuthSession():
-return $default(_that.user,_that.tokens,_that.forcePasswordChange);case _:
-  throw StateError('Unexpected subclass');
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(AuthUser user, AuthTokens tokens, bool forcePasswordChange)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AuthSession():
+        return $default(_that.user, _that.tokens, _that.forcePasswordChange);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
 
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AuthUser user,  AuthTokens tokens,  bool forcePasswordChange)?  $default,) {final _that = this;
-switch (_that) {
-case _AuthSession() when $default != null:
-return $default(_that.user,_that.tokens,_that.forcePasswordChange);case _:
-  return null;
-
-}
-}
-
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            AuthUser user, AuthTokens tokens, bool forcePasswordChange)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AuthSession() when $default != null:
+        return $default(_that.user, _that.tokens, _that.forcePasswordChange);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
-
 class _AuthSession implements AuthSession {
-  const _AuthSession({required this.user, required this.tokens, this.forcePasswordChange = false});
-  factory _AuthSession.fromJson(Map<String, dynamic> json) => _$AuthSessionFromJson(json);
+  const _AuthSession(
+      {required this.user,
+      required this.tokens,
+      this.forcePasswordChange = false});
+  factory _AuthSession.fromJson(Map<String, dynamic> json) =>
+      _$AuthSessionFromJson(json);
 
-@override final  AuthUser user;
-@override final  AuthTokens tokens;
-@override@JsonKey() final  bool forcePasswordChange;
+  @override
+  final AuthUser user;
+  @override
+  final AuthTokens tokens;
+  @override
+  @JsonKey()
+  final bool forcePasswordChange;
 
-/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AuthSessionCopyWith<_AuthSession> get copyWith => __$AuthSessionCopyWithImpl<_AuthSession>(this, _$identity);
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AuthSessionCopyWith<_AuthSession> get copyWith =>
+      __$AuthSessionCopyWithImpl<_AuthSession>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$AuthSessionToJson(this, );
-}
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AuthSessionToJson(
+      this,
+    );
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AuthSession&&(identical(other.user, user) || other.user == user)&&(identical(other.tokens, tokens) || other.tokens == tokens)&&(identical(other.forcePasswordChange, forcePasswordChange) || other.forcePasswordChange == forcePasswordChange));
-}
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AuthSession &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.tokens, tokens) || other.tokens == tokens) &&
+            (identical(other.forcePasswordChange, forcePasswordChange) ||
+                other.forcePasswordChange == forcePasswordChange));
+  }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,user,tokens,forcePasswordChange);
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, user, tokens, forcePasswordChange);
 
-@override
-String toString() {
-  return 'AuthSession(user: $user, tokens: $tokens, forcePasswordChange: $forcePasswordChange)';
-}
-
-
+  @override
+  String toString() {
+    return 'AuthSession(user: $user, tokens: $tokens, forcePasswordChange: $forcePasswordChange)';
+  }
 }
 
 /// @nodoc
-abstract mixin class _$AuthSessionCopyWith<$Res> implements $AuthSessionCopyWith<$Res> {
-  factory _$AuthSessionCopyWith(_AuthSession value, $Res Function(_AuthSession) _then) = __$AuthSessionCopyWithImpl;
-@override @useResult
-$Res call({
- AuthUser user, AuthTokens tokens, bool forcePasswordChange
-});
+abstract mixin class _$AuthSessionCopyWith<$Res>
+    implements $AuthSessionCopyWith<$Res> {
+  factory _$AuthSessionCopyWith(
+          _AuthSession value, $Res Function(_AuthSession) _then) =
+      __$AuthSessionCopyWithImpl;
+  @override
+  @useResult
+  $Res call({AuthUser user, AuthTokens tokens, bool forcePasswordChange});
 
-
-@override $AuthUserCopyWith<$Res> get user;@override $AuthTokensCopyWith<$Res> get tokens;
-
+  @override
+  $AuthUserCopyWith<$Res> get user;
+  @override
+  $AuthTokensCopyWith<$Res> get tokens;
 }
+
 /// @nodoc
-class __$AuthSessionCopyWithImpl<$Res>
-    implements _$AuthSessionCopyWith<$Res> {
+class __$AuthSessionCopyWithImpl<$Res> implements _$AuthSessionCopyWith<$Res> {
   __$AuthSessionCopyWithImpl(this._self, this._then);
 
   final _AuthSession _self;
   final $Res Function(_AuthSession) _then;
 
-/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? user = null,Object? tokens = null,Object? forcePasswordChange = null,}) {
-  return _then(_AuthSession(
-user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as AuthUser,tokens: null == tokens ? _self.tokens : tokens // ignore: cast_nullable_to_non_nullable
-as AuthTokens,forcePasswordChange: null == forcePasswordChange ? _self.forcePasswordChange : forcePasswordChange // ignore: cast_nullable_to_non_nullable
-as bool,
-  ));
-}
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? user = null,
+    Object? tokens = null,
+    Object? forcePasswordChange = null,
+  }) {
+    return _then(_AuthSession(
+      user: null == user
+          ? _self.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AuthUser,
+      tokens: null == tokens
+          ? _self.tokens
+          : tokens // ignore: cast_nullable_to_non_nullable
+              as AuthTokens,
+      forcePasswordChange: null == forcePasswordChange
+          ? _self.forcePasswordChange
+          : forcePasswordChange // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 
-/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AuthUserCopyWith<$Res> get user {
-  
-  return $AuthUserCopyWith<$Res>(_self.user, (value) {
-    return _then(_self.copyWith(user: value));
-  });
-}/// Create a copy of AuthSession
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$AuthTokensCopyWith<$Res> get tokens {
-  
-  return $AuthTokensCopyWith<$Res>(_self.tokens, (value) {
-    return _then(_self.copyWith(tokens: value));
-  });
-}
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthUserCopyWith<$Res> get user {
+    return $AuthUserCopyWith<$Res>(_self.user, (value) {
+      return _then(_self.copyWith(user: value));
+    });
+  }
+
+  /// Create a copy of AuthSession
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthTokensCopyWith<$Res> get tokens {
+    return $AuthTokensCopyWith<$Res>(_self.tokens, (value) {
+      return _then(_self.copyWith(tokens: value));
+    });
+  }
 }
 
 // dart format on

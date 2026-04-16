@@ -7,12 +7,15 @@ part of 'auth_dtos.dart';
 // **************************************************************************
 
 _ApiErrorDto _$ApiErrorDtoFromJson(Map<String, dynamic> json) => _ApiErrorDto(
-  code: json['code'] as String?,
-  message: json['message'] as String?,
-);
+      code: json['code'] as String?,
+      message: json['message'] as String?,
+    );
 
 Map<String, dynamic> _$ApiErrorDtoToJson(_ApiErrorDto instance) =>
-    <String, dynamic>{'code': instance.code, 'message': instance.message};
+    <String, dynamic>{
+      'code': instance.code,
+      'message': instance.message,
+    };
 
 _ApiErrorV2Dto _$ApiErrorV2DtoFromJson(Map<String, dynamic> json) =>
     _ApiErrorV2Dto(
@@ -43,16 +46,24 @@ Map<String, dynamic> _$LoginRequestDtoToJson(_LoginRequestDto instance) =>
     };
 
 _RefreshRequestDto _$RefreshRequestDtoFromJson(Map<String, dynamic> json) =>
-    _RefreshRequestDto(refreshToken: json['refreshToken'] as String);
+    _RefreshRequestDto(
+      refreshToken: json['refreshToken'] as String,
+    );
 
 Map<String, dynamic> _$RefreshRequestDtoToJson(_RefreshRequestDto instance) =>
-    <String, dynamic>{'refreshToken': instance.refreshToken};
+    <String, dynamic>{
+      'refreshToken': instance.refreshToken,
+    };
 
 _LogoutRequestDto _$LogoutRequestDtoFromJson(Map<String, dynamic> json) =>
-    _LogoutRequestDto(refreshToken: json['refreshToken'] as String);
+    _LogoutRequestDto(
+      refreshToken: json['refreshToken'] as String,
+    );
 
 Map<String, dynamic> _$LogoutRequestDtoToJson(_LogoutRequestDto instance) =>
-    <String, dynamic>{'refreshToken': instance.refreshToken};
+    <String, dynamic>{
+      'refreshToken': instance.refreshToken,
+    };
 
 _LoginUserDto _$LoginUserDtoFromJson(Map<String, dynamic> json) =>
     _LoginUserDto(
@@ -109,10 +120,14 @@ Map<String, dynamic> _$RefreshResponseDtoToJson(_RefreshResponseDto instance) =>
     };
 
 _LogoutResponseDto _$LogoutResponseDtoFromJson(Map<String, dynamic> json) =>
-    _LogoutResponseDto(success: json['success'] as bool);
+    _LogoutResponseDto(
+      loggedOut: json['loggedOut'] as bool,
+    );
 
 Map<String, dynamic> _$LogoutResponseDtoToJson(_LogoutResponseDto instance) =>
-    <String, dynamic>{'success': instance.success};
+    <String, dynamic>{
+      'loggedOut': instance.loggedOut,
+    };
 
 _MeResponseDto _$MeResponseDtoFromJson(Map<String, dynamic> json) =>
     _MeResponseDto(
@@ -177,115 +192,123 @@ Map<String, dynamic> _$ApiEnvelopeV2DtoToJson(_ApiEnvelopeV2Dto instance) =>
     };
 
 _ChangePasswordV2RequestDto _$ChangePasswordV2RequestDtoFromJson(
-  Map<String, dynamic> json,
-) => _ChangePasswordV2RequestDto(
-  currentPassword: json['currentPassword'] as String,
-  newPassword: json['newPassword'] as String,
-);
-
-Map<String, dynamic> _$ChangePasswordV2RequestDtoToJson(
-  _ChangePasswordV2RequestDto instance,
-) => <String, dynamic>{
-  'currentPassword': instance.currentPassword,
-  'newPassword': instance.newPassword,
-};
-
-_ChangePasswordV2ResponseDto _$ChangePasswordV2ResponseDtoFromJson(
-  Map<String, dynamic> json,
-) => _ChangePasswordV2ResponseDto(changed: json['changed'] as bool);
-
-Map<String, dynamic> _$ChangePasswordV2ResponseDtoToJson(
-  _ChangePasswordV2ResponseDto instance,
-) => <String, dynamic>{'changed': instance.changed};
-
-_ProfileImageUploadUrlV2RequestDto _$ProfileImageUploadUrlV2RequestDtoFromJson(
-  Map<String, dynamic> json,
-) => _ProfileImageUploadUrlV2RequestDto(
-  contentType: json['contentType'] as String,
-  fileName: json['fileName'] as String,
-);
-
-Map<String, dynamic> _$ProfileImageUploadUrlV2RequestDtoToJson(
-  _ProfileImageUploadUrlV2RequestDto instance,
-) => <String, dynamic>{
-  'contentType': instance.contentType,
-  'fileName': instance.fileName,
-};
-
-_ProfileImageUploadUrlV2ResponseDto
-_$ProfileImageUploadUrlV2ResponseDtoFromJson(Map<String, dynamic> json) =>
-    _ProfileImageUploadUrlV2ResponseDto(
-      uploadUrl: json['uploadUrl'] as String,
-      profileImageUrl: json['profileImageUrl'] as String,
-      objectKey: json['objectKey'] as String,
-      expiresInSeconds: (json['expiresInSeconds'] as num).toInt(),
+        Map<String, dynamic> json) =>
+    _ChangePasswordV2RequestDto(
+      currentPassword: json['currentPassword'] as String,
+      newPassword: json['newPassword'] as String,
     );
 
+Map<String, dynamic> _$ChangePasswordV2RequestDtoToJson(
+        _ChangePasswordV2RequestDto instance) =>
+    <String, dynamic>{
+      'currentPassword': instance.currentPassword,
+      'newPassword': instance.newPassword,
+    };
+
+_ChangePasswordV2ResponseDto _$ChangePasswordV2ResponseDtoFromJson(
+        Map<String, dynamic> json) =>
+    _ChangePasswordV2ResponseDto(
+      changed: json['changed'] as bool,
+    );
+
+Map<String, dynamic> _$ChangePasswordV2ResponseDtoToJson(
+        _ChangePasswordV2ResponseDto instance) =>
+    <String, dynamic>{
+      'changed': instance.changed,
+    };
+
+_ProfileImageUploadUrlV2RequestDto _$ProfileImageUploadUrlV2RequestDtoFromJson(
+        Map<String, dynamic> json) =>
+    _ProfileImageUploadUrlV2RequestDto(
+      contentType: json['contentType'] as String,
+      fileName: json['fileName'] as String?,
+    );
+
+Map<String, dynamic> _$ProfileImageUploadUrlV2RequestDtoToJson(
+        _ProfileImageUploadUrlV2RequestDto instance) =>
+    <String, dynamic>{
+      'contentType': instance.contentType,
+      'fileName': instance.fileName,
+    };
+
+_ProfileImageUploadUrlV2ResponseDto
+    _$ProfileImageUploadUrlV2ResponseDtoFromJson(Map<String, dynamic> json) =>
+        _ProfileImageUploadUrlV2ResponseDto(
+          uploadUrl: json['uploadUrl'] as String,
+          profileImageUrl: json['profileImageUrl'] as String,
+          objectKey: json['objectKey'] as String,
+          expiresInSeconds: (json['expiresInSeconds'] as num).toInt(),
+        );
+
 Map<String, dynamic> _$ProfileImageUploadUrlV2ResponseDtoToJson(
-  _ProfileImageUploadUrlV2ResponseDto instance,
-) => <String, dynamic>{
-  'uploadUrl': instance.uploadUrl,
-  'profileImageUrl': instance.profileImageUrl,
-  'objectKey': instance.objectKey,
-  'expiresInSeconds': instance.expiresInSeconds,
-};
+        _ProfileImageUploadUrlV2ResponseDto instance) =>
+    <String, dynamic>{
+      'uploadUrl': instance.uploadUrl,
+      'profileImageUrl': instance.profileImageUrl,
+      'objectKey': instance.objectKey,
+      'expiresInSeconds': instance.expiresInSeconds,
+    };
 
 _UpdateProfileV2RequestDto _$UpdateProfileV2RequestDtoFromJson(
-  Map<String, dynamic> json,
-) => _UpdateProfileV2RequestDto(
-  nickname: json['nickname'] as String?,
-  profileImageUrl: json['profileImageUrl'] as String?,
-);
+        Map<String, dynamic> json) =>
+    _UpdateProfileV2RequestDto(
+      nickname: json['nickname'] as String?,
+      profileImageUrl: json['profileImageUrl'] as String?,
+    );
 
 Map<String, dynamic> _$UpdateProfileV2RequestDtoToJson(
-  _UpdateProfileV2RequestDto instance,
-) => <String, dynamic>{
-  'nickname': instance.nickname,
-  'profileImageUrl': instance.profileImageUrl,
-};
+        _UpdateProfileV2RequestDto instance) =>
+    <String, dynamic>{
+      'nickname': instance.nickname,
+      'profileImageUrl': instance.profileImageUrl,
+    };
 
 _UserLookupV2ResponseDto _$UserLookupV2ResponseDtoFromJson(
-  Map<String, dynamic> json,
-) => _UserLookupV2ResponseDto(
-  id: json['id'] as String,
-  username: json['username'] as String,
-  role: $enumDecode(_$AuthRoleDtoEnumMap, json['role']),
-  publicCode: json['publicCode'] as String?,
-  nickname: json['nickname'] as String?,
-  profileImageUrl: json['profileImageUrl'] as String?,
-);
+        Map<String, dynamic> json) =>
+    _UserLookupV2ResponseDto(
+      id: json['id'] as String,
+      username: json['username'] as String,
+      role: $enumDecode(_$AuthRoleDtoEnumMap, json['role']),
+      publicCode: json['publicCode'] as String?,
+      nickname: json['nickname'] as String?,
+      profileImageUrl: json['profileImageUrl'] as String?,
+    );
 
 Map<String, dynamic> _$UserLookupV2ResponseDtoToJson(
-  _UserLookupV2ResponseDto instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'username': instance.username,
-  'role': _$AuthRoleDtoEnumMap[instance.role]!,
-  'publicCode': instance.publicCode,
-  'nickname': instance.nickname,
-  'profileImageUrl': instance.profileImageUrl,
-};
+        _UserLookupV2ResponseDto instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'username': instance.username,
+      'role': _$AuthRoleDtoEnumMap[instance.role]!,
+      'publicCode': instance.publicCode,
+      'nickname': instance.nickname,
+      'profileImageUrl': instance.profileImageUrl,
+    };
 
 _ActivateV2RequestDto _$ActivateV2RequestDtoFromJson(
-  Map<String, dynamic> json,
-) => _ActivateV2RequestDto(
-  token: json['token'] as String,
-  password: json['password'] as String,
-  username: json['username'] as String,
-);
+        Map<String, dynamic> json) =>
+    _ActivateV2RequestDto(
+      token: json['token'] as String,
+      password: json['password'] as String,
+      username: json['username'] as String,
+    );
 
 Map<String, dynamic> _$ActivateV2RequestDtoToJson(
-  _ActivateV2RequestDto instance,
-) => <String, dynamic>{
-  'token': instance.token,
-  'password': instance.password,
-  'username': instance.username,
-};
+        _ActivateV2RequestDto instance) =>
+    <String, dynamic>{
+      'token': instance.token,
+      'password': instance.password,
+      'username': instance.username,
+    };
 
 _ActivateV2ResponseDto _$ActivateV2ResponseDtoFromJson(
-  Map<String, dynamic> json,
-) => _ActivateV2ResponseDto(activated: json['activated'] as bool);
+        Map<String, dynamic> json) =>
+    _ActivateV2ResponseDto(
+      activated: json['activated'] as bool,
+    );
 
 Map<String, dynamic> _$ActivateV2ResponseDtoToJson(
-  _ActivateV2ResponseDto instance,
-) => <String, dynamic>{'activated': instance.activated};
+        _ActivateV2ResponseDto instance) =>
+    <String, dynamic>{
+      'activated': instance.activated,
+    };

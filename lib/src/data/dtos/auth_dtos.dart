@@ -121,7 +121,8 @@ abstract class RefreshResponseDto with _$RefreshResponseDto {
 /// 로그아웃 응답 DTO.
 @freezed
 abstract class LogoutResponseDto with _$LogoutResponseDto {
-  const factory LogoutResponseDto({required bool success}) = _LogoutResponseDto;
+  const factory LogoutResponseDto({required bool loggedOut}) =
+      _LogoutResponseDto;
 
   /// JSON 역직렬화.
   factory LogoutResponseDto.fromJson(Map<String, dynamic> json) =>
@@ -209,7 +210,7 @@ abstract class ProfileImageUploadUrlV2RequestDto
     with _$ProfileImageUploadUrlV2RequestDto {
   const factory ProfileImageUploadUrlV2RequestDto({
     required String contentType,
-    required String fileName,
+    String? fileName,
   }) = _ProfileImageUploadUrlV2RequestDto;
 
   /// JSON 역직렬화.
